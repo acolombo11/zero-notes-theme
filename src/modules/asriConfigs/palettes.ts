@@ -64,6 +64,19 @@ export const asriPrstPalettes: Record<string, PresetPalette> = {
     },
   },
 
+  "prst-palette-polar": {
+    "dark": {
+      "primary": "#E6E9EF",
+      "chroma": "0",
+      "followSysAccentColor": false,
+    },
+    "light": {
+      "primary": "#1B1C1D",
+      "chroma": "0",
+      "followSysAccentColor": false,
+    },
+  },
+
   "prst-palette-stellula": {
     "dark": {
       "primary": "#3B2731",
