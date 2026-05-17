@@ -185,7 +185,7 @@
     }
   }
 
-  //文档标题
+  //文档标題
   &-title {
     &__input {
       font-size: 2.75em;
@@ -204,14 +204,6 @@
 
     &__icon {
       top: calc(2.4em * 1.4 / 2 + 8px) !important; // fix https://github.com/mustakshif/Asri/issues/45
-      transform: scale(0.8);
-      transform-origin: right center;
-      transition-timing-function: var(--asri-ease-spring-5);
-      transition-duration: 0.8s;
-    }
-
-    &:hover .protyle-title__icon {
-      transform: none;
     }
   }
 }
