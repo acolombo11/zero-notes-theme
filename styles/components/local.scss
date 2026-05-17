@@ -1,0 +1,12 @@
+// Personal overrides — cloud/account UI elements hidden for local-only use
+.b3-list-item[data-name="account"],
+.b3-list-item[data-name="repos"],
+#barSync,
+#toolbarVIP,
+#trialSub {
+  display: none;
+}
+
+.b3-menu__item[data-id="wechatReminder"] {
+  display: none;
+}
