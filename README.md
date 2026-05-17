@@ -3,6 +3,8 @@ English | [简体中文](https://github.com/mustakshif/Asri-for-SiYuan/blob/main
 <!-- [![Releases](https://img.shields.io/github/downloads/mustakshif/Asri/total?label=Downloads&color=477BF9&style=flat)](https://github.com/mustakshif/Asri/releases/latest)
 [![Stars](https://img.shields.io/github/stars/mustakshif/Asri?style=flat)](https://star-history.com/#mustakshif/Asri) -->
 
+> This is a personal fork of [Asri](https://github.com/mustakshif/Asri) by mustakshif, customized for use with [Zero Notes](https://github.com/acolombo11/zero-notes).
+
 # Asri · When the Interface Fades, the Mind Emerges
 
 Asri is a modern theme designed for [SiYuan Note](https://github.com/siyuan-note/siyuan), crafting a space where visual distractions disappear and your thinking takes center stage - immersive, focused, and intuitively guided.
