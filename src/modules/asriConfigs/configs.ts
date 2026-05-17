@@ -8,14 +8,14 @@ export const asriConfigs: AsriConfigs = {
     "followCoverImgColor":false,
     "chroma": "1",
     "userCustomColor": "#3478f6",
-    "presetPalette": "prst-palette-polar",
+    "presetPalette": "prst-palette-zero",
   },
   "dark": {
     "followSysAccentColor": false,
     "followCoverImgColor":false,
     "chroma": "1",
     "userCustomColor": "#3478f6",
-    "presetPalette": "prst-palette-polar",
+    "presetPalette": "prst-palette-zero",
   },
   "features": {
     "tfp": "",

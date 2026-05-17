@@ -51,7 +51,7 @@ export const asriPrstPalettes: Record<string, PresetPalette> = {
     },
   },
 
-  "prst-palette-polar": {
+  "prst-palette-zero": {
     "dark": {
       "primary": "#E6E9EF",
       "chroma": "0",
