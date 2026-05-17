@@ -24,7 +24,7 @@ export const asriConfigs: AsriConfigs = {
 
 export async function getLocalConfigs() {
   console.log("curMode", env.appSchemeMode);
-  await getFile("/data/snippets/Asri.config.json")
+  await getFile("/data/snippets/Zero.config.json")
     .then((response) => {
       if (response && response.status === 200) {
         return response.json();
@@ -57,5 +57,5 @@ export async function getLocalConfigs() {
 }
 
 export async function updateAsriConfigs() {
-  await putFile("/data/snippets/Asri.config.json", JSON.stringify(asriConfigs, undefined, 4));
+  await putFile("/data/snippets/Zero.config.json", JSON.stringify(asriConfigs, undefined, 4));
 }

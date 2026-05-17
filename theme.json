@@ -1,12 +1,12 @@
 {
-  "name": "Asri",
+  "name": "Zero",
   "author": "mustakshif",
   "url": "https://github.com/mustakshif/Asri",
   "version": "3.6.20",
   "displayName": {
-    "default": "Asri",
-    "zh_CN": "Asri",
-    "en_US": "Asri"
+    "default": "Zero",
+    "zh_CN": "Zero",
+    "en_US": "Zero"
   },
   "description": {
     "default": "Crafting a space where visual distractions disappear and your thinking takes center stage - immersive, focused, and intuitively guided.",
@@ -29,7 +29,7 @@
     "dark"
   ],
   "keywords": [
-    "Asri",
+    "Zero",
     "Hadeeth"
   ]
 }
