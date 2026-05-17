@@ -2,8 +2,8 @@ name: Release
 
 on:
     push:
-        tags:
-            - 'v*'
+        branches:
+            - main
 
 jobs:
     build:
@@ -20,32 +20,29 @@ jobs:
 
         - name: Extract version
           id: get_version
-          run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          run: |
+            VERSION="v$(jq -r '.version' theme.json)"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
 
         - name: Get previous version
           id: get_prev_version
           run: |
-            PREV_VERSION=$(git tag --sort=-v:refname | grep -v "^${GITHUB_REF#refs/tags/}$" | head -n 1)
+            PREV_VERSION=$(git tag --sort=-v:refname | grep -v "^${VERSION}$" | head -n 1)
             echo "PREV_VERSION=$PREV_VERSION" >> $GITHUB_ENV
 
         - name: Extract changelog
           id: get_changelog
           run: |
-            # 获取最新版本的更新日志内容
-            VERSION_TAG="${GITHUB_REF#refs/tags/}"
-            CHANGELOG=$(awk -v version="$VERSION_TAG" '
+            CHANGELOG=$(awk -v version="$VERSION" '
               BEGIN { p=0 }
-              /^### '"$VERSION_TAG"'/ { p=1; next }
+              $0 ~ "^### " version { p=1; next }
               /^### v/ { p=0 }
               p { print }
             ' CHANGELOG.md)
-            # 移除开头的空行
             CHANGELOG=$(echo "$CHANGELOG" | sed '/./,$!d')
-            # 移除末尾的空行
             CHANGELOG=$(echo "$CHANGELOG" | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}')
-            # 添加 changelog 链接
-            CHANGELOG=$(printf "%s\n\n**Full Changelog**: https://github.com/acolombo11/zero-notes-theme/compare/$PREV_VERSION...${GITHUB_REF#refs/tags/}" "$CHANGELOG")
-            # 输出到环境变量
+            CHANGELOG=$(printf "%s\n\n**Full Changelog**: https://github.com/acolombo11/zero-notes-theme/compare/$PREV_VERSION...$VERSION" "$CHANGELOG")
             echo "CHANGELOG<<EOF" >> $GITHUB_ENV
             echo "$CHANGELOG" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
@@ -60,6 +57,7 @@ jobs:
         - name: Create Release
           uses: ncipollo/release-action@v1.13.0
           with:
+            tag: ${{ env.VERSION }}
             allowUpdates: true
             artifactErrorsFailBuild: true
             artifacts: "package.zip"
