@@ -8,14 +8,14 @@ export const asriConfigs: AsriConfigs = {
     "followCoverImgColor":false,
     "chroma": "1",
     "userCustomColor": "#3478f6",
-    "presetPalette": "",
+    "presetPalette": "prst-palette-polar",
   },
   "dark": {
     "followSysAccentColor": false,
     "followCoverImgColor":false,
     "chroma": "1",
     "userCustomColor": "#3478f6",
-    "presetPalette": "",
+    "presetPalette": "prst-palette-polar",
   },
   "features": {
     "tfp": "",
@@ -58,4 +58,4 @@ export async function getLocalConfigs() {
 
 export async function updateAsriConfigs() {
   await putFile("/data/snippets/Asri.config.json", JSON.stringify(asriConfigs, undefined, 4));
-} 
+}
