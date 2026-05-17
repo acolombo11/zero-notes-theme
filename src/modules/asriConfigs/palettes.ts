@@ -51,19 +51,6 @@ export const asriPrstPalettes: Record<string, PresetPalette> = {
     },
   },
 
-  "prst-palette-zero": {
-    "dark": {
-      "primary": "#E6E9EF",
-      "chroma": "0",
-      "followSysAccentColor": false,
-    },
-    "light": {
-      "primary": "#1B1C1D",
-      "chroma": "0",
-      "followSysAccentColor": false,
-    },
-  },
-
   "prst-palette-polar": {
     "dark": {
       "primary": "#E6E9EF",
@@ -99,6 +86,19 @@ export const asriPrstPalettes: Record<string, PresetPalette> = {
     "light": {
       "primary": "#FFFCF3",
       "chroma": "1.2",
+      "followSysAccentColor": false,
+    },
+  },
+
+  "prst-palette-zero": {
+    "dark": {
+      "primary": "#E6E9EF",
+      "chroma": "0",
+      "followSysAccentColor": false,
+    },
+    "light": {
+      "primary": "#1B1C1D",
+      "chroma": "0",
       "followSysAccentColor": false,
     },
   },
